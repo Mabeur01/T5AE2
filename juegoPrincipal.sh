@@ -34,7 +34,7 @@ while true; do
   echo "Tu puntuación actual es $puntuacion_jugador"
   read -p "Quieres pedir otra carta? (s/n): " respuesta
   if [[ $respuesta == "s" ]]; then
-    carta=$((${baraja[$RANDOM % 9]}))
+    carta=$((${baraja[$RANDOM % 9]}+1))
     echo "Has sacado un $carta"
     puntuacion_jugador=$(calcular_puntuacion $puntuacion_jugador $carta)
     if [[ $((puntuacion_jugador > 8)) -eq 1 ]]; then
