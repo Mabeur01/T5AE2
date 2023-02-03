@@ -19,10 +19,12 @@ do
 
     case $opcion in 
     "1")
-    ##AÑADIR LLAMADA A SCRIPT
+    script_principal="juegoPrincipal.sh"
+    ./$script_principal
     ;;
     "2")
-    ##AÑADIR LLAMADA A SCRIPT
+    script_instrucciones="juego.sh"
+    :/$script_instrucciones
     ;;
     "3")
     ##AÑADIR LLAMADA A SCRIPT
