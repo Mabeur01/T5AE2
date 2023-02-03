@@ -45,3 +45,11 @@ while true; do
     break
   fi
 done
+
+# Turno de la IA
+while [[ $((puntuacion_ia < 8)) -eq 1 ]]
+ do
+    carta=$((${baraja[$RANDOM % 9]}+1))
+    echo "La IA ha sacado un $carta"
+    puntuacion_ia=$(calcular_puntuacion $puntuacion_ia $carta)
+  done
