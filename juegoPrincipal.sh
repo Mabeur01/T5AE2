@@ -25,3 +25,23 @@ calcular_puntuacion() {
   done
   echo $puntuacion
 }
+
+# Baraja de cartas
+baraja=(As 2 3 4 5 6 J Q K)
+
+# Juego
+while true; do
+  echo "Tu puntuación actual es $puntuacion_jugador"
+  read -p "Quieres pedir otra carta? (s/n): " respuesta
+  if [[ $respuesta == "s" ]]; then
+    carta=$((${baraja[$RANDOM % 9]}))
+    echo "Has sacado un $carta"
+    puntuacion_jugador=$(calcular_puntuacion $puntuacion_jugador $carta)
+    if [[ $((puntuacion_jugador > 8)) -eq 1 ]]; then
+      echo "Te has pasado de 8. Has perdido."
+      exit 0
+    fi
+  else
+    break
+  fi
+done
