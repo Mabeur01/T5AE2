@@ -53,3 +53,16 @@ while [[ $((puntuacion_ia < 8)) -eq 1 ]]
     echo "La IA ha sacado un $carta"
     puntuacion_ia=$(calcular_puntuacion $puntuacion_ia $carta)
   done
+
+  # Comprobar quién gana
+if [[ $((puntuacion_jugador > puntuacion_ia && puntuacion_jugador <= 8 || puntuacion_ia > 8)) -eq 1 ]]; then
+  echo "Has ganado con una puntuación de $puntuacion_jugador"
+  echo "La IA ha perdido con una puntuación de $puntuacion_ia"
+else
+if [[ $((puntuacion_ia > puntuacion_jugador && puntuacion_ia <= 8)) -eq 1 ]]; then
+  echo "La IA ha ganado con una puntuación de $puntuacion_ia"
+  echo "Has perdido con una puntuación de $puntuacion_jugador"
+  else
+  echo "Empate."
+fi
+fi
