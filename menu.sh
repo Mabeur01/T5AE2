@@ -10,11 +10,10 @@ do
     echo "-------------MENU DE OPCIONES------------------"
     echo "1: INICIAR JUEGO."
     echo "2: INSTRUCCIONES."
-    echo "3: NÚMERO DE JUGADORES."
-    echo "4: SALIR DEL JUEGO."
+    echo "3: SALIR DEL JUEGO."
     echo "----------------------------------------------"
     echo " "
-    read -p "Selecciona una opción (1..4): " opcion
+    read -p "Selecciona una opción (1..3): " opcion
     echo " "
 
     case $opcion in 
@@ -27,9 +26,6 @@ do
     :/$script_instrucciones
     ;;
     "3")
-    ##AÑADIR LLAMADA A SCRIPT
-    ;;
-    "4")
     echo "FIN DEL JUEGO."
     break
     ;;
