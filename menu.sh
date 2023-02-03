@@ -2,7 +2,7 @@
 
 opcion=0
 
-while [ $opcion -ne "4" ]
+while [ $opcion -ne "3" ]
 do
     echo ""
     echo "===============JUEGO 7 Y MEDIO.================"
@@ -23,7 +23,7 @@ do
     ;;
     "2")
     script_instrucciones="juego.sh"
-    :/$script_instrucciones
+    ./$script_instrucciones
     ;;
     "3")
     echo "FIN DEL JUEGO."
