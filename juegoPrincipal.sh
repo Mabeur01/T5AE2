@@ -38,7 +38,12 @@ while true; do
     echo "Has sacado un $carta"
     puntuacion_jugador=$(calcular_puntuacion $puntuacion_jugador $carta)
     if [[ $((puntuacion_jugador > 8)) -eq 1 ]]; then
-      echo "Te has pasado de 8. Has perdido."
+    echo ""
+    echo " _     _ _______ _______       _____  _______  ______ ______  _____ ______   _____ 
+ |_____| |_____| |______      |_____] |______ |_____/ |     \   |   |     \ |     |
+ |     | |     | ______|      |       |______ |    \_ |_____/ __|__ |_____/ |_____|
+                                                                                   "
+      echo "Te has pasado de 8."
       exit 0
     fi
   else
@@ -56,13 +61,29 @@ while [[ $((puntuacion_ia < 8)) -eq 1 ]]
 
   # Comprobar quién gana
 if [[ $((puntuacion_jugador > puntuacion_ia && puntuacion_jugador <= 8 || puntuacion_ia > 8)) -eq 1 ]]; then
-  echo "Has ganado con una puntuación de $puntuacion_jugador"
+  echo ""
+  echo " _     _ _______ _______       ______ _______ __   _ _______ ______   _____ 
+ |_____| |_____| |______      |  ____ |_____| | \  | |_____| |     \ |     |
+ |     | |     | ______|      |_____| |     | |  \_| |     | |_____/ |_____|"
+ echo ""
+  echo "Con una puntuación de $puntuacion_jugador"
+ 
   echo "La IA ha perdido con una puntuación de $puntuacion_ia"
 else
 if [[ $((puntuacion_ia > puntuacion_jugador && puntuacion_ia <= 8)) -eq 1 ]]; then
+  echo ""
+  echo " _     _ _______ _______       _____  _______  ______ ______  _____ ______   _____ 
+ |_____| |_____| |______      |_____] |______ |_____/ |     \   |   |     \ |     |
+ |     | |     | ______|      |       |______ |    \_ |_____/ __|__ |_____/ |_____| "
+  echo ""
   echo "La IA ha ganado con una puntuación de $puntuacion_ia"
+  echo ""
   echo "Has perdido con una puntuación de $puntuacion_jugador"
   else
-  echo "Empate."
+  echo ""
+  echo " _______ _______  _____  _______ _______ _______
+ |______ |  |  | |_____] |_____|    |    |______
+ |______ |  |  | |       |     |    |    |______
+                                                "
 fi
 fi
